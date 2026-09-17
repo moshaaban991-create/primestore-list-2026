@@ -3,17 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PRIME STORE | Price Menu</title>
+<meta name="theme-color" content="#0b0b0b">
+<title>PRIME STORE | قائمة الأسعار</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0d0d0d;color:#fff;font-family:Arial,sans-serif}
-header{text-align:center;padding:28px 16px;border-bottom:1px solid #3b3018;background:linear-gradient(180deg,#151515,#0d0d0d)}
-.logo{width:90px;height:90px;object-fit:contain}.brand{font-size:34px;font-weight:800;letter-spacing:3px;color:#e1bd62}.sub{color:#aaa;margin-top:6px}
-.wrap{max-width:900px;margin:auto;padding:20px 14px}.section{margin:22px 0}.section h2{color:#e1bd62;border-right:4px solid #e1bd62;padding-right:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-.card{background:#171717;border:1px solid #302817;border-radius:14px;padding:16px}
-.name{font-size:18px;font-weight:700}.details{color:#aaa;font-size:13px;margin:8px 0}.price{color:#e1bd62;font-size:20px;font-weight:800}
+*{box-sizing:border-box}
+:root{--gold:#e9bd45;--gold2:#fff0a6;--bg:#080808;--card:#141414;--muted:#a9a9a9}
+body{margin:0;background:radial-gradient(circle at top,#1b1609 0,#080808 38%);color:#fff;font-family:Arial,Tahoma,sans-serif}
+header{text-align:center;padding:25px 16px 22px;border-bottom:1px solid #3b3018;position:sticky;top:0;background:rgba(8,8,8,.96);backdrop-filter:blur(8px);z-index:5}
+.logo{width:120px;height:120px;object-fit:contain;display:block;margin:0 auto 8px}
+.brand{font-size:34px;font-weight:900;letter-spacing:4px;color:#fff}
+.sub{color:var(--gold);margin-top:7px;font-size:13px;letter-spacing:1px}
+.wrap{max-width:1000px;margin:auto;padding:18px 14px 80px}
+.toolbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0 20px}
+button{border:1px solid #5b471d;background:#181818;color:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}
+button:hover{border-color:var(--gold);color:var(--gold2)}
+.primary{background:var(--gold);color:#111;border-color:var(--gold)}
+.section{margin:24px 0}
+.section h2{color:var(--gold);border-right:4px solid var(--gold);padding-right:10px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}
+.card{background:linear-gradient(145deg,#171717,#101010);border:1px solid #302817;border-radius:15px;padding:14px;min-height:130px;box-shadow:0 8px 25px rgba(0,0,0,.18)}
+.card img{width:100%;height:180px;object-fit:contain;background:#0b0b0b;border-radius:10px;margin-bottom:10px}
+.name{font-size:18px;font-weight:800}.details{color:var(--muted);font-size:13px;margin:7px 0}.price{color:var(--gold);font-size:20px;font-weight:900}
+.card-actions{display:flex;gap:7px;margin-top:12px}.card-actions button{flex:1}
 .empty{color:#777;text-align:center;padding:18px;border:1px dashed #3b3018;border-radius:12px}
-footer{text-align:center;color:#777;padding:30px 10px;font-size:12px}
+footer{text-align:center;color:#777;padding:25px 10px;font-size:12px}
+#editor{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:20;overflow:auto;padding:20px}
+.panel{max-width:700px;margin:30px auto;background:#151515;border:1px solid #4c3b18;border-radius:16px;padding:18px}
+.panel h3{color:var(--gold);margin-top:0}
+label{display:block;color:#ddd;margin:10px 0 5px}
+input,textarea,select{width:100%;background:#0b0b0b;color:#fff;border:1px solid #44381e;border-radius:9px;padding:11px;font-size:15px}
+textarea{min-height:80px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.actions{display:flex;gap:8px;justify-content:flex-start;flex-wrap:wrap;margin-top:14px}
+.help{color:#999;font-size:12px;line-height:1.7}
+@media(max-width:600px){.brand{font-size:28px}.logo{width:100px;height:100px}.row{grid-template-columns:1fr}.card img{height:150px}}
 </style>
 </head>
 <body>
@@ -22,20 +45,132 @@ footer{text-align:center;color:#777;padding:30px 10px;font-size:12px}
 <div class="brand">PRIME STORE</div>
 <div class="sub">MOBILE • ACCESSORIES • SERVICE</div>
 </header>
+
 <main class="wrap">
-<section class="section"><h2>📱 الموبايلات</h2><div class="grid">
-<div class="card"><div class="name">اسم المنتج</div><div class="details">التفاصيل / السعة / اللون</div><div class="price">السعر: —</div></div>
-<div class="card"><div class="name">اسم المنتج</div><div class="details">التفاصيل / السعة / اللون</div><div class="price">السعر: —</div></div>
-</div></section>
-<section class="section"><h2>🎧 الإكسسوارات</h2><div class="grid">
-<div class="card"><div class="name">اسم المنتج</div><div class="details">التفاصيل</div><div class="price">السعر: —</div></div>
-<div class="card"><div class="name">اسم المنتج</div><div class="details">التفاصيل</div><div class="price">السعر: —</div></div>
-</div></section>
-<section class="section"><h2>🔌 الشواحن والكابلات</h2><div class="grid">
-<div class="card"><div class="name">اسم المنتج</div><div class="details">التفاصيل</div><div class="price">السعر: —</div></div>
-<div class="card"><div class="name">اسم المنتج</div><div class="details">التفاصيل</div><div class="price">السعر: —</div></div>
-</div></section>
+<div class="toolbar">
+<button class="primary" onclick="openEditor()">✏️ تعديل القائمة</button>
+<button onclick="window.print()">🖨️ طباعة</button>
+</div>
+<div id="menu"></div>
 </main>
-<footer>PRIME STORE • Price Menu</footer>
+<footer>PRIME STORE • قائمة الأسعار</footer>
+
+<div id="editor">
+<div class="panel">
+<h3>تعديل قائمة PRIME STORE</h3>
+<p class="help">من هنا تقدر تضيف وتعدل وتحذف المنتجات من غير ما تفتح الكود. التعديلات محفوظة على نفس المتصفح. استخدم تصدير/استيراد لنقل القائمة لجهاز آخر.</p>
+
+<div class="row">
+<div>
+<label>القسم</label>
+<select id="category"></select>
+</div>
+<div>
+<label>اسم المنتج</label>
+<input id="name" placeholder="مثال: iPhone 15">
+</div>
+</div>
+<label>التفاصيل</label>
+<textarea id="details" placeholder="السعة / اللون / الضمان..."></textarea>
+<div class="row">
+<div>
+<label>السعر</label>
+<input id="price" placeholder="مثال: 24999">
+</div>
+<div>
+<label>صورة المنتج</label>
+<input id="image" type="file" accept="image/*">
+</div>
+</div>
+<div class="actions">
+<button class="primary" onclick="saveProduct()">حفظ المنتج</button>
+<button onclick="closeEditor()">إغلاق</button>
+</div>
+<hr style="border-color:#2c2618;margin:18px 0">
+<div class="actions">
+<button onclick="addCategory()">➕ إضافة قسم</button>
+<button onclick="exportData()">⬇️ تصدير القائمة</button>
+<button onclick="document.getElementById('importFile').click()">⬆️ استيراد القائمة</button>
+<input id="importFile" type="file" accept="application/json" style="display:none" onchange="importData(event)">
+<button onclick="resetData()">↺ رجوع للبيانات الأصلية</button>
+</div>
+<div id="manage" style="margin-top:18px"></div>
+</div>
+</div>
+
+<script>
+const defaultData=[
+ {id:1,category:"📱 الموبايلات",name:"اسم المنتج",details:"التفاصيل / السعة / اللون",price:"—",image:""},
+ {id:2,category:"📱 الموبايلات",name:"اسم المنتج",details:"التفاصيل / السعة / اللون",price:"—",image:""},
+ {id:3,category:"🎧 الإكسسوارات",name:"اسم المنتج",details:"التفاصيل",price:"—",image:""},
+ {id:4,category:"🎧 الإكسسوارات",name:"اسم المنتج",details:"التفاصيل",price:"—",image:""},
+ {id:5,category:"🔌 الشواحن والكابلات",name:"اسم المنتج",details:"التفاصيل",price:"—",image:""},
+ {id:6,category:"🔌 الشواحن والكابلات",name:"اسم المنتج",details:"التفاصيل",price:"—",image:""}
+];
+let data=JSON.parse(localStorage.getItem("prime_store_menu")||"null")||defaultData;
+let editId=null;
+
+function save(){localStorage.setItem("prime_store_menu",JSON.stringify(data));render();}
+function categories(){return [...new Set(data.map(x=>x.category))]}
+function render(){
+ const box=document.getElementById("menu"); box.innerHTML="";
+ const cats=categories();
+ if(!data.length){box.innerHTML='<div class="empty">لا توجد منتجات حاليًا. افتح تعديل القائمة وأضف أول منتج.</div>';return}
+ cats.forEach(cat=>{
+   const sec=document.createElement("section"); sec.className="section";
+   sec.innerHTML="<h2>"+escapeHtml(cat)+"</h2><div class='grid'></div>";
+   const grid=sec.querySelector(".grid");
+   data.filter(x=>x.category===cat).forEach(p=>{
+     const c=document.createElement("div"); c.className="card";
+     c.innerHTML=(p.image?`<img src="${p.image}" alt="">`:"")+
+       `<div class="name">${escapeHtml(p.name)}</div><div class="details">${escapeHtml(p.details||"")}</div><div class="price">السعر: ${escapeHtml(p.price||"—")}</div>`;
+     grid.appendChild(c);
+   });
+   box.appendChild(sec);
+ });
+}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function openEditor(){
+ editId=null; document.getElementById("name").value="";document.getElementById("details").value="";document.getElementById("price").value="";document.getElementById("image").value="";
+ fillCats(); renderManage(); document.getElementById("editor").style.display="block";
+}
+function closeEditor(){document.getElementById("editor").style.display="none"}
+function fillCats(){
+ const s=document.getElementById("category");s.innerHTML="";
+ categories().forEach(c=>{const o=document.createElement("option");o.value=c;o.textContent=c;s.appendChild(o)});
+ if(!s.options.length){const o=document.createElement("option");o.value="📦 منتجات";o.textContent="📦 منتجات";s.appendChild(o)}
+}
+function saveProduct(){
+ const name=document.getElementById("name").value.trim(); if(!name){alert("اكتب اسم المنتج");return}
+ const cat=document.getElementById("category").value, details=document.getElementById("details").value.trim(), price=document.getElementById("price").value.trim()||"—";
+ const file=document.getElementById("image").files[0];
+ const finish=(img)=>{
+   if(editId){const p=data.find(x=>x.id===editId);Object.assign(p,{category:cat,name,details,price});if(img!==undefined)p.image=img}
+   else data.push({id:Date.now(),category:cat,name,details,price,image:img||""});
+   save(); editId=null; document.getElementById("name").value="";document.getElementById("details").value="";document.getElementById("price").value="";document.getElementById("image").value="";renderManage();
+ };
+ if(file) resizeImage(file,finish); else finish(undefined);
+}
+function resizeImage(file,cb){
+ const r=new FileReader();r.onload=e=>{const im=new Image();im.onload=()=>{const max=900,scale=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*scale);c.height=Math.round(im.height*scale);c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.78))};im.src=e.target.result};r.readAsDataURL(file);
+}
+function renderManage(){
+ const m=document.getElementById("manage");m.innerHTML="<h4 style='color:#e9bd45'>المنتجات الحالية</h4>";
+ data.forEach(p=>{
+   const d=document.createElement("div");d.style.cssText="border:1px solid #302817;border-radius:10px;padding:9px;margin:7px 0;display:flex;gap:8px;align-items:center;justify-content:space-between";
+   d.innerHTML=`<span>${escapeHtml(p.name)} <small style="color:#888">(${escapeHtml(p.category)})</small></span><span><button onclick="editProduct(${p.id})">تعديل</button> <button onclick="deleteProduct(${p.id})">حذف</button></span>`;
+   m.appendChild(d);
+ });
+}
+function editProduct(id){
+ const p=data.find(x=>x.id===id); if(!p)return; editId=id; fillCats();document.getElementById("category").value=p.category;document.getElementById("name").value=p.name;document.getElementById("details").value=p.details;document.getElementById("price").value=p.price;document.getElementById("image").value="";window.scrollTo(0,0);
+}
+function deleteProduct(id){if(confirm("تحذف المنتج؟")){data=data.filter(x=>x.id!==id);save();renderManage()}}
+function addCategory(){const c=prompt("اكتب اسم القسم الجديد:");if(!c)return; if(!data.some(x=>x.category===c))data.push({id:Date.now(),category:c,name:"منتج جديد",details:"",price:"—",image:""});save();fillCats();renderManage()}
+function exportData(){const b=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="prime-store-menu.json";a.click();URL.revokeObjectURL(a.href)}
+function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x))throw 0;data=x;save();fillCats();renderManage();alert("تم استيراد القائمة بنجاح")}catch{alert("ملف القائمة غير صحيح")}};r.readAsText(f)}
+function resetData(){if(confirm("هترجع للبيانات الأصلية وتمسح التعديلات الحالية؟")){data=JSON.parse(JSON.stringify(defaultData));save();fillCats();renderManage()}}
+render();
+</script>
 </body>
 </html>
